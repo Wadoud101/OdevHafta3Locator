@@ -1,0 +1,73 @@
+Hafta3
+	Odev1
+		1.Bir websitesi seciniz.
+		2.Bir senaryo yaziniz, verdigim orneklere bagli kalmak zorunda degilsiniz.
+		3.Bu zamana kadar clear(),click(),sendKeys() gibi basit methodlar gordugunuz icin
+		  icin senaryonuz sade/basit olabilir.
+		4.Locate edeceginiz text/button/textbox vb. webElementleri ogrendiginiz 8 farkli
+              Selenium Locator'i kullanarak yapiniz.
+            5.Bir webelementi 5kez, farkli yollarla locate edin.
+            6.En az 6 webElement locate edilmis olsun.(10 idealdir.)
+           
+		7.Ornek senaryo1->YemekSepetine git(login olmadan, cunku ilave authentication gerekebilir),
+              urunAra, urunSec, UrunTikla, SepeteEkle
+		8.Ornek senaryo2->Twitter'a git(login olmadan, https://twitter.com/explore),twitKonusuAra,birTwitBul,likeYap
+            9.Intellij'de package olusturun(maven project kullaniyorsunuz)
+         
+	      10. Bir tane "WebElemenlerim" isimli class'iniz olucak
+			-public/protected/default WebElement element01= driver.findElement(...); ifadeleri burdan alinacak
+			-buradaki variablelar static olacak
+			-Buradaki bir variable'i(statik variablelari) baska classtan cagiriken 2 yolu var
+				-"WebElementlerim.element01"(classAdi.variableAdi)
+                        -"import static packageAdi.classAdi.*" yaptiktan sonra,  "element01"
+ 
+            11. Bir tane "Constants" isimli classiniz olucak.
+                  -public/protected/default final String EMAIL="abc@gmail.com";
+                  -public/protected/default final String URL="https://www.-----.com";
+				-yukardaki orneklerde access modifier size kalmis.
+					-Bilgi->javada 4 Access modifier vardir(public, protected, , private)
+			
+			-Bu classtaki her variable final olacak, non-static olacak.
+				-Baska bir classtan bu constant variablelari cagirmak icin;
+					Constant obje=new Constant();
+                              webElement.sendKeys(obje.EMAIL);
+                  -Ek bilgi, final variablelar BUYUK_HARFLE_YAZILIRLAR
+
+		12."Methodlarim" isimli bir classiniz olsun
+			-methodlar static ya da non static olabilir size kalmis.
+			-launchBrowser()   ,launchChrome(), goToURL(),...
+			-actionToPerform() ,clickElement(), sendKeysToTextBox(),...gibi methodlariniz burada olacak
+			
+		13."Driver" isimli bir classiniz olacak
+			public class Driver
+			{
+				public static WebDriver driver=WebDriverManager.chrome...;
+
+				//static olmak zorunda, cunku static variable class'a aittir. Belli 1 tane objeye degil.
+				//static int sayi=5; ile int sayi2=5; arasindaki farkli unutmus iseniz googlelama yapiniz, sunu yaziniz;
+				//javada static degisken(class variable) ve normal degisken(instance variable) nedir?
+				
+				//ChromeOptions kullanimi istege bagli
+
+			}
+		14. "MyWebAppAutomationProgram" isimli class'iniz olsun
+			-Icindeki main methodu olsun.
+			-Bu classin icinde olusturacaginiz objeler main methodun disinda olsun, ornegin;
+           		       -static Constants obje1=new Constant(); 
+					static obje olursa static olan main methodun icinden direk cagrilabilir.
+					non-static obje olursa da olur(yapabilirsiniz), 
+						o zaman -> new MyWebAppAutomationProgram().obje1 diye cagirabilirsiniz.
+
+
+ 
+
+
+
+	Odevin Amaci
+		1-Temiz kod yazmak, methodlar, sabitler olusturarak sol paneldeki dosya yapisini guzel olusturmak
+		2-Java bilgilerini sindirmek.(isteyen arkadaslar java OOP conseptlerini de bu odevde kullanabilirler)
+		3-En iyi odev ilk sirada olur :)
+            4-Ogrenilen Selenium Locatorlarinin hepsini kullanmaya calismak, avantaj-dezavantajlarini pratiklestirmek
+		5-Bu odevin teslim tarihi bu cuma aksamdir. 9 Aralik 2022, 23:59
+
+            
